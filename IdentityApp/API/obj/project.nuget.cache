@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Q2uaP+tREi/iQBLLkzlUxUYPontnuD9ZceYPbNHZIj/wHr5jzZpjdfZccw6Q+wnPcGZxwei1jFQHuu4iSQHXHA==",
+  "dgSpecHash": "ZOfu0QY/olpTJ4IFibDixWpEixGHz73Y0cfRH32ak3pZzu2uxR8xZxr7oKAQrzR5icGtfINM80j9pykPZaYckg==",
   "success": true,
   "projectFilePath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bohda\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\bohda\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\bohda\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\bohda\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\bohda\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bohda\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

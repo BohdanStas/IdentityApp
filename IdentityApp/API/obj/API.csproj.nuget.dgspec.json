@@ -33,6 +33,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\BLL.csproj": {
+                "projectPath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\BLL.csproj"
+              },
               "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\DAL\\DAL.csproj": {
                 "projectPath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\DAL\\DAL.csproj"
               }
@@ -49,6 +52,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -86,6 +97,79 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\bohda\\.nuget\\packages\\",
+        "outputPath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\bohda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.net.nixdev.co/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

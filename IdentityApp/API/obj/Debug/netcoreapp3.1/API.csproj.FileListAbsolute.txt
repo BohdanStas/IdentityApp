@@ -70,3 +70,7 @@ E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcor
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\DAL.pdb
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\Domain.pdb
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\obj\Debug\netcoreapp3.1\API.csproj.CopyComplete
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\MediatR.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\BLL.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\BLL.pdb

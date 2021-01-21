@@ -7,3 +7,6 @@ E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Debug\netcor
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Debug\netcoreapp3.1\BLL.dll
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\bin\Debug\netcoreapp3.1\Domain.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\bin\Debug\netcoreapp3.1\Domain.pdb
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete

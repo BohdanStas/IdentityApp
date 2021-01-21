@@ -11,6 +11,28 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "MediatR/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
+      "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "MediatR": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1894,6 +1916,21 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "MediatR": "9.0.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BLL.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1940,6 +1977,37 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "MediatR/9.0.0": {
+      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "type": "package",
+      "path": "mediatr/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.9.0.0.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
+      "sha512": "msreY4ogiPdIRWiCQVHQDytIQpsZCLWsixWPZ+Xs86KZrvtuiV8BDHbIT0kBmogynVYWNpspb3caw+86YU8L6w==",
+      "type": "package",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll",
+        "mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+        "mediatr.extensions.microsoft.dependencyinjection.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -6633,6 +6701,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "BLL/1.0.0": {
+      "type": "project",
+      "path": "../BLL/BLL.csproj",
+      "msbuildProject": "../BLL/BLL.csproj"
+    },
     "DAL/1.0.0": {
       "type": "project",
       "path": "../DAL/DAL.csproj",
@@ -6646,7 +6719,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BLL >= 1.0.0",
       "DAL >= 1.0.0",
+      "MediatR >= 9.0.0",
+      "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.2",
       "Microsoft.EntityFrameworkCore >= 5.0.2",
@@ -6687,6 +6763,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\BLL.csproj": {
+              "projectPath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\BLL\\BLL.csproj"
+            },
             "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\DAL\\DAL.csproj": {
               "projectPath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\DAL\\DAL.csproj"
             }
@@ -6703,6 +6782,14 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "MediatR": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
+          "MediatR.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
             "version": "[2.2.0, )"
