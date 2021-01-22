@@ -34,7 +34,7 @@ namespace BLL.Services
                 new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
             };
 
-            // generte signing credentials 
+            // generate signing credentials 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"]));
             var creds = new SigningCredentials(key,SecurityAlgorithms.HmacSha512Signature);
 

@@ -1,24 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using API.Models;
-using Domain.Entities;
 using Domain.Interfaces;
+using FluentValidation;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 
 namespace API.Queries
 {
+    // ask about nested class. Maybe better to segregate them?
     public class Login
     {
-        // todo add fluent validation
         public class Query : IRequest<UserViewModel>
         {
             public string Email { get; set; }
 
             public string Password { get; set; }
+        }
+
+        public class QueryValidator : AbstractValidator<Query>
+        {
+            public QueryValidator()
+            {
+                RuleFor(x => x.Email).EmailAddress();
+                RuleFor(x => x.Password).NotEmpty();
+            }
         }
 
         public class Handler : IRequestHandler<Query, UserViewModel>

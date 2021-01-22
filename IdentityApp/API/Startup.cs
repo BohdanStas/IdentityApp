@@ -4,6 +4,7 @@ using BLL.Services;
 using DAL.Data;
 using Domain.Entities;
 using Domain.Interfaces;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -35,7 +36,7 @@ namespace API
             {
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
                 opt.Filters.Add(new AuthorizeFilter(policy));
-            });
+            }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
             services.AddDbContext<DataContext>(options =>
             {

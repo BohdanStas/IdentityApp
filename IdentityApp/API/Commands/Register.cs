@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using API.Models;
 using Domain.Entities;
 using Domain.Interfaces;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,16 @@ namespace API.Commands
             public string Username { get; set; }
 
             public string Password { get; set; }
+        }
+
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.Email).EmailAddress().NotEmpty();
+                RuleFor(x => x.Password).NotEmpty();
+                RuleFor(x => x.Username).NotEmpty();
+            }
         }
 
         public class Handler : IRequestHandler<Command, UserViewModel>
