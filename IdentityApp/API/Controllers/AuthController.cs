@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Models;
+using API.Queries;
 using BLL;
 using Domain.Entities;
 using MediatR;
@@ -21,11 +23,10 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> Login([FromBody]Login.Query credentials)
+        public async Task<ActionResult<UserViewModel>> Login([FromBody]Login.Query credentials)
         {
             // todo add try catch block
-
-           return await this.mediator.Send(new Login.Query(){Email = credentials.Email,Password = credentials.Password});
+            return await this.mediator.Send(new Login.Query(){Email = credentials.Email,Password = credentials.Password});
 
         }
     }

@@ -1,6 +1,8 @@
 using BLL;
+using BLL.Services;
 using DAL.Data;
 using Domain.Entities;
+using Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,8 +39,9 @@ namespace API
             var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
             identityBuilder.AddEntityFrameworkStores<DataContext>();
             identityBuilder.AddSignInManager<SignInManager<User>>();
-            services.AddMediatR(typeof(Login).Assembly);
+            services.AddMediatR(typeof(Startup).Assembly);
             services.AddAuthentication();
+            services.AddTransient<IAuthService, AuthService>();
 
         }
 
