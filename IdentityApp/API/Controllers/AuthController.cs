@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Commands;
 using API.Models;
 using API.Queries;
 using BLL;
@@ -24,17 +25,24 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult<UserViewModel>> Login([FromBody]Login.Query credentials)
         {
             // todo add try catch block
-            return await this.mediator.Send(new Login.Query(){Email = credentials.Email,Password = credentials.Password});
+            return await this.mediator.Send(credentials);
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult<string> GetSecuredString()
         {
             return "My string with authorize attr";
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult<UserViewModel>> Register([FromBody] Register.Command command)
+        {
+            return await this.mediator.Send(command);
         }
     }
 }

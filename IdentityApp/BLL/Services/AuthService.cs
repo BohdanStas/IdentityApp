@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BLL.Services
@@ -17,10 +18,13 @@ namespace BLL.Services
 
         private readonly SignInManager<User> signInManager;
 
-        public AuthService(UserManager<User> userManager, SignInManager<User> signInManager)
+        private readonly IConfiguration configuration;
+
+        public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.configuration = configuration;
         }
 
         public string CreateToken(User user)
@@ -31,7 +35,7 @@ namespace BLL.Services
             };
 
             // generte signing credentials 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("super secret key"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"]));
             var creds = new SigningCredentials(key,SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor()
