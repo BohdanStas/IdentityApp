@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using API.Models;
+using AutoMapper;
 using Domain.Interfaces;
 using FluentValidation;
 using MediatR;
@@ -30,22 +31,22 @@ namespace API.Queries
         {
             private readonly IAuthService authService;
 
-            public Handler(IAuthService authService)
+            private readonly IMapper mapper;
+
+            public Handler(IAuthService authService, IMapper mapper)
             {
                 this.authService = authService;
+                this.mapper = mapper;
             }
 
             public async Task<UserViewModel> Handle(Query request, CancellationToken cancellationToken)
             {
                 var user = await this.authService.LoginAsync(request.Email, request.Password);
-               
-                //todo mapper
-                return new UserViewModel()
-                {
-                    Email = user.Email,
-                    UserName = user.UserName,
-                    Token = this.authService.CreateToken(user)
-                };
+
+                var userViewModel = this.mapper.Map<UserViewModel>(user);
+                userViewModel.Token = this.authService.CreateToken(user);
+
+                return userViewModel;
             }
         }
     }

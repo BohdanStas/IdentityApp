@@ -1,5 +1,6 @@
 using System.Text;
-using BLL;
+using API.Mapper;
+using AutoMapper;
 using BLL.Services;
 using DAL.Data;
 using Domain.Entities;
@@ -37,6 +38,8 @@ namespace API
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
                 opt.Filters.Add(new AuthorizeFilter(policy));
             }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+            services.AddAutoMapper(typeof(MapperProfile));
 
             services.AddDbContext<DataContext>(options =>
             {

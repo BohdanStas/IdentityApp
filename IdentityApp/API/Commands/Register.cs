@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using API.Models;
+using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;
 using FluentValidation;
@@ -19,18 +20,19 @@ namespace API.Commands
         {
             public string Email { get; set; }
 
-            public string Username { get; set; }
+            public string UserName { get; set; }
 
             public string Password { get; set; }
         }
 
+        // или же лучше вынести?
         public class CommandValidator : AbstractValidator<Command>
         {
             public CommandValidator()
             {
                 RuleFor(x => x.Email).EmailAddress().NotEmpty();
                 RuleFor(x => x.Password).NotEmpty();
-                RuleFor(x => x.Username).NotEmpty();
+                RuleFor(x => x.UserName).NotEmpty();
             }
         }
 
@@ -40,10 +42,13 @@ namespace API.Commands
 
             private readonly IAuthService authService;
 
-            public Handler(UserManager<User> userManager, IAuthService authService)
+            private readonly IMapper mapper;
+
+            public Handler(UserManager<User> userManager, IAuthService authService, IMapper mapper)
             {
                 this.userManager = userManager;
                 this.authService = authService;
+                this.mapper = mapper;
             }
 
             public async Task<UserViewModel> Handle(Command request, CancellationToken cancellationToken)
@@ -53,16 +58,12 @@ namespace API.Commands
                     throw new Exception("User with this email is exist");
                 }
 
-                if (await this.userManager.Users.AnyAsync(u => u.UserName == request.Username))
+                if (await this.userManager.Users.AnyAsync(u => u.UserName == request.UserName))
                 {
                     throw new Exception("User with this username is exist");
                 }
 
-                var user = new User()
-                {
-                    Email = request.Email,
-                    UserName = request.Username
-                };
+                var user = this.mapper.Map<User>(request);
 
                 var result = await this.userManager.CreateAsync(user, request.Password);
 
@@ -71,13 +72,10 @@ namespace API.Commands
                     throw new Exception("something went wrong");
                 }
 
-                return new UserViewModel()
-                {
-                    Email = request.Email,
-                    UserName = request.Username,
-                    Token = this.authService.CreateToken(user)
-                };
+                var userViewModel = this.mapper.Map<UserViewModel>(user);
+                userViewModel.Token = this.authService.CreateToken(user);
 
+                return userViewModel;
             }
         }
     }

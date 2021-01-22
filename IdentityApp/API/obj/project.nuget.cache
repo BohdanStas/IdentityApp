@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5pqG7CY1a/in5z6QxPFVyTRmeGP5dYjVTfv+K48JaRS7Ko77+caayJRfoM7HRA8JKiIb/7/jmNU496u9dBRHTQ==",
+  "dgSpecHash": "L0OPGeMfCehhZ89/Dhb9QAkGSns11fcjvG2O6H1ReD5JZxtsEdRO76WuJGqtlb6ct+nuJ7y3mmoN2ARt+rTGrw==",
   "success": true,
   "projectFilePath": "E:\\Study and work\\C#\\React\\Practise\\IdentityApp\\IdentityApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bohda\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\bohda\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\bohda\\.nuget\\packages\\fluentvalidation\\9.4.0\\fluentvalidation.9.4.0.nupkg.sha512",
     "C:\\Users\\bohda\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.4.0\\fluentvalidation.aspnetcore.9.4.0.nupkg.sha512",
     "C:\\Users\\bohda\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.4.0\\fluentvalidation.dependencyinjectionextensions.9.4.0.nupkg.sha512",

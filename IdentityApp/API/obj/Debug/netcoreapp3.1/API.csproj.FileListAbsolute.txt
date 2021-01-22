@@ -79,3 +79,5 @@ E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcor
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
