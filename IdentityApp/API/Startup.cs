@@ -1,9 +1,11 @@
+using System.Text;
 using BLL;
 using BLL.Services;
 using DAL.Data;
 using Domain.Entities;
 using Domain.Interfaces;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -11,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.IdentityModel.Tokens;
 
 
 namespace API
@@ -40,7 +42,17 @@ namespace API
             identityBuilder.AddEntityFrameworkStores<DataContext>();
             identityBuilder.AddSignInManager<SignInManager<User>>();
             services.AddMediatR(typeof(Startup).Assembly);
-            services.AddAuthentication();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("super secret key")),
+                        ValidateAudience = false,
+                        ValidateIssuer = false
+                    };
+                });
             services.AddTransient<IAuthService, AuthService>();
 
         }
@@ -55,9 +67,10 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+  
+            app.UseAuthentication(); 
             app.UseAuthorization();
-            app.UseAuthentication();
+          
 
             app.UseEndpoints(endpoints =>
             {

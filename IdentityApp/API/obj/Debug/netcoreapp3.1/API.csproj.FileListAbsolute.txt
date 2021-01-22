@@ -74,3 +74,4 @@ E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcor
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\BLL.dll
 E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\BLL.pdb
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
