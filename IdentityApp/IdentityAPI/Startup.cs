@@ -54,6 +54,7 @@ namespace IdentityAPI
             var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
             identityBuilder.AddEntityFrameworkStores<DataContext>();
             identityBuilder.AddSignInManager<SignInManager<User>>();
+
             services.AddMediatR(typeof(Startup).Assembly);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -62,7 +63,7 @@ namespace IdentityAPI
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["TokenKey"])),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Super secret key")),
                         ValidateAudience = false,
                         ValidateIssuer = false
                     };

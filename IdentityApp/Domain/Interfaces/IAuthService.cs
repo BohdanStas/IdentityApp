@@ -11,5 +11,7 @@ namespace Domain.Interfaces
         Task<User> LoginAsync(string email, string password);
 
         string CreateToken(User user);
+
+        string GetCurrentUserName();
     }
 }

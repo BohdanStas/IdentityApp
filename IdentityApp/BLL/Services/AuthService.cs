@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -20,11 +22,14 @@ namespace BLL.Services
 
         private readonly IConfiguration configuration;
 
-        public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
+        private readonly IHttpContextAccessor httpContextAccessor;
+
+        public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.configuration = configuration;
+            this.httpContextAccessor = httpContextAccessor;
         }
 
         public string CreateToken(User user)
@@ -35,14 +40,15 @@ namespace BLL.Services
             };
 
             // generate signing credentials 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"]));
-            var creds = new SigningCredentials(key,SecurityAlgorithms.HmacSha512Signature);
+            //Azure Key Vault
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Super secret key"));
+            var credentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(7),
-                SigningCredentials = creds
+                SigningCredentials = credentials
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -51,6 +57,10 @@ namespace BLL.Services
 
             return tokenHandler.WriteToken(token);
         }
+
+        public string GetCurrentUserName() =>
+            this.httpContextAccessor.HttpContext?.User?.Claims
+                .FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value;
 
         public async Task<User> LoginAsync(string email, string password)
         {
@@ -69,7 +79,6 @@ namespace BLL.Services
                 throw new Exception("Password is wrong");
             }
 
-            //todo mapper
             return user;
         }
     }
