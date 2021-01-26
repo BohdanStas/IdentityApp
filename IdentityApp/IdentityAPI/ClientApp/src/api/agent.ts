@@ -2,7 +2,7 @@ import axios, {AxiosResponse} from "axios";
 import {ILoginForm, IUser} from "../models/User";
 
 
-axios.defaults.baseURL = 'https://localhost:44384/'
+axios.defaults.baseURL = 'https://testapp32.azurewebsites.net/'
 
 const responseBody = (response: AxiosResponse) => response.data;
 

@@ -1,0 +1,12 @@
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\bin\Release\netcoreapp3.1\BLL.deps.json
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\bin\Release\netcoreapp3.1\BLL.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\bin\Release\netcoreapp3.1\BLL.pdb
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\bin\Release\netcoreapp3.1\Domain.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\bin\Release\netcoreapp3.1\Domain.pdb
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Release\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Release\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Release\netcoreapp3.1\BLL.AssemblyInfo.cs
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Release\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Release\netcoreapp3.1\BLL.csproj.CopyComplete
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Release\netcoreapp3.1\BLL.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\BLL\obj\Release\netcoreapp3.1\BLL.pdb

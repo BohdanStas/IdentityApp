@@ -1,0 +1,12 @@
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\bin\Release\netcoreapp3.1\DAL.deps.json
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\bin\Release\netcoreapp3.1\DAL.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\bin\Release\netcoreapp3.1\DAL.pdb
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\bin\Release\netcoreapp3.1\Domain.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\bin\Release\netcoreapp3.1\Domain.pdb
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\obj\Release\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\obj\Release\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\obj\Release\netcoreapp3.1\DAL.AssemblyInfo.cs
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\obj\Release\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\obj\Release\netcoreapp3.1\DAL.csproj.CopyComplete
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\obj\Release\netcoreapp3.1\DAL.dll
+E:\Study and work\C#\React\Practise\IdentityApp\IdentityApp\DAL\obj\Release\netcoreapp3.1\DAL.pdb
